@@ -6,9 +6,25 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #000000;
+  color: #FFFFFF;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+@font-face {
+  font-family: 'New-Krytan';
+  font-style: normal;
+  font-weight: 400;
+  src:
+          local('New-Krytan'),
+          local('New-Krytan-Regular'),
+          url(./resources/fonts/NewKrytan/NewKrytan.eot) format('embedded-opentype'),
+          url(./resources/fonts/NewKrytan/NewKrytan.ttf) format('truetype'),
+          url(./resources/fonts/NewKrytan/NewKrytan.svg) format('svg'),
+          url(./resources/fonts/NewKrytan/NewKrytan.woff2) format('woff2'),
+          url(./resources/fonts/NewKrytan/NewKrytan.woff) format('woff');
 }

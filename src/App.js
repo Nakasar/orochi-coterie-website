@@ -1,25 +1,12 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import OrochiColor from './resources/images/orochi_color.png';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+      <div style={{ textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', minHeight: '100vh' }}>
+        <img src={OrochiColor} alt="Côterie Orochi" style={{ height: '40vmin' }}/>
+        <h1 style={{ fontFamily: 'New-Krytan' }}>Côterie Orochi</h1>
       </div>
     );
   }
