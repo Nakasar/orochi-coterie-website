@@ -2,15 +2,15 @@ import React from 'react';
 import { StyleSheet, css } from 'aphrodite';
 
 const styles = StyleSheet.create({
+  krytian: {
+    fontFamily: 'New-Krytan',
+  },
   base: {
     padding: '10px',
     margin: '3px',
     borderRadius: '5px',
-    fontFamily: 'New-Krytan',
     fontSize: '1rem',
-    ':focus': {
-
-    },
+    width: '100%',
   },
   default: {
     backgroundColor: '#FFFFFF',
@@ -23,6 +23,7 @@ const styles = StyleSheet.create({
     color: '#FFFFFF',
     ':hover': {
       color: '#000000',
+      backgroundColor: '#FFFFFF',
     },
   },
   primary: {
@@ -30,6 +31,7 @@ const styles = StyleSheet.create({
     borderColor: '#69299a',
     ':hover': {
       color: '#b339ff',
+      backgroundColor: '#69299a',
       borderColor: '#b339ff',
     },
   },
@@ -38,17 +40,36 @@ const styles = StyleSheet.create({
     borderColor: '#9a0011',
     ':hover': {
       color: '#ff001c',
+      backgroundColor: '#9a0011',
       borderColor: '#ff001d',
+    },
+  },
+  cyan: {
+    color: '#239a9a',
+    borderColor: '#239a9a',
+    ':hover': {
+      color: '#2fe3e3',
+      backgroundColor: '#239a9a',
+      borderColor: '#2fe3e3',
+    },
+  },
+  success: {
+    color: '#0c9b00',
+    borderColor: '#0c9b00',
+    ':hover': {
+      color: '#08e700',
+      backgroundColor: '#0c9b00',
+      borderColor: '#08e700',
     },
   }
 });
 
 class Button extends React.Component {
   render() {
-    const { text = '', variant = 'default', color = 'none' } = this.props;
+    const { text = '', variant = 'default', color = 'none', onClick, krytian = false } = this.props;
 
     return (
-      <button className={css(styles.base, styles[variant], styles[color])}>{text}</button>
+      <button className={css(styles.base, styles[variant], styles[color], krytian && styles.krytian)} onClick={onClick}>{text}</button>
     );
   }
 }
