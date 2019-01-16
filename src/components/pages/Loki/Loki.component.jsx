@@ -41,7 +41,7 @@ class Loki extends React.Component {
     this.setState({ loading: true, error: null, success: null });
 
     try {
-      const user = await identity.signupUser(email, password);
+      const result = await identity.signupUser(email, password);
 
       this.setState({ success: 'Votre compte nécessite une confirmation, vérifiez vos emails.', loading: false });
     } catch (err) {
@@ -73,7 +73,7 @@ class Loki extends React.Component {
     this.setState({ loading: true, error: null, success: null });
 
     try {
-      const user = await identity.loginUser(email, password);
+      const result = await identity.loginUser(email, password, true);
 
       this.setState({ success: 'Vous êtes connecté au réseau.', loading: false });
     } catch (err) {
@@ -88,6 +88,9 @@ class Loki extends React.Component {
             break;
           case 'Invalid Password':
             error = 'Identifiants invalides.';
+            break;
+          case 'Email not confirmed':
+            error = 'Compte en attente de validation, vérifiez vos mails.';
             break;
           default:
             error = 'Une erreur est survenue, veuillez réessayer.';
